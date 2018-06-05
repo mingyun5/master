@@ -8,10 +8,30 @@
 </head>
 <body>
 <jsp:include page="/link.html" flush="false"/>
-
 <br>
-
-<p>welcom ${name }</p>
-${ok }
+	<form action="/loginServlet" method="POST">
+		<table>
+			<tr>
+				<th>ID : </th>
+				<td>
+					<input type="text" name="id" />
+				</td>
+			</tr>
+			<tr>
+				<th>PW : </th>
+				<td>
+					<input type="password" name="password"/>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit"/>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<div>
+		${error }
+	</div>
 </body>
 </html>

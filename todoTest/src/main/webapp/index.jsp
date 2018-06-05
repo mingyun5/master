@@ -9,39 +9,41 @@
 <body>
 <jsp:include page="link.html" flush="false"/>
 	<form action="/joinServlet" method="post">
-		<thead>
+		<table>
+			<thead>
 			<tr>
 				<th colspan="2">회원가입</th>
 			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<th>아이디</th>
-				<td>
-					<input type="text" name="id" />
-				</td>
-			</tr>
-			<tr>
-				<th>비밀번호</th>
-				<td>
-					<input type="password" name="password"/>
-				</td>
-			</tr>
-			<tr>
-				<th>이름</th>
-				<td>
-					<input type="text" name="name">
-				</td>
-			</tr>
-		</tbody>
-		<tfoot>
-			<tr>
-				<td>
-					<input type="submit" value="가입">
-					<input type="reset" value="취소">
-				</td>
-			</tr>
-		</tfoot>
+			</thead>
+			<tbody>
+				<tr>
+					<th>아이디</th>
+					<td>
+						<input type="text" name="id" />
+					</td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td>
+						<input type="password" name="password"/>
+					</td>
+				</tr>
+				<tr>
+					<th>이름</th>
+					<td>
+						<input type="text" name="name">
+					</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td>
+						<input type="submit" value="가입">
+						<input type="reset" value="취소">
+					</td>
+				</tr>
+			</tfoot>
+		</table>
 	</form>
 </body>
 </html>

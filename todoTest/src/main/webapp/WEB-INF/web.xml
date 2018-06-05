@@ -16,6 +16,18 @@
     <filter-name>encodingFilter</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <filter>
+  	<filter-name>loginFilter</filter-name>
+  	<filter-class>org.webapp.filter.Loginfilter</filter-class>
+  	<init-param>
+  		<param-name>excluded</param-name>
+  		<param-value>/index.jsp, /, /loginServlet, /joinServlet</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>loginFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   <servlet>
     <description></description>
     <display-name>JoinServlet</display-name>
@@ -25,5 +37,25 @@
   <servlet-mapping>
     <servlet-name>JoinServlet</servlet-name>
     <url-pattern>/JoinServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>logoutServlet</display-name>
+    <servlet-name>logoutServlet</servlet-name>
+    <servlet-class>org.webapp.servlet.logoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>logoutServlet</servlet-name>
+    <url-pattern>/logoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>loginServlet</display-name>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>org.webapp.servlet.loginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/loginServlet</url-pattern>
   </servlet-mapping>
 </web-app>
