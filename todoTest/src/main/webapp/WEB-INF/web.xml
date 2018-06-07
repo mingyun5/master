@@ -68,5 +68,14 @@
     <servlet-name>AddTodoServlet</servlet-name>
     <url-pattern>/AddTodoServlet</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <description></description>
+    <display-name>ListTodoPageServlet</display-name>
+    <servlet-name>ListTodoPageServlet</servlet-name>
+    <servlet-class>org.webapp.servlet.ListTodoPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListTodoPageServlet</servlet-name>
+    <url-pattern>/ListTodoPageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

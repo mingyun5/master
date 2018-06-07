@@ -9,41 +9,52 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<%
-	TodoService service = new TodoDAOImpl();
-	String id = (String) session.getAttribute("user_id");
-%>
+<% TodoService service = new TodoDAOImpl();
+ 	String id = (String)session.getAttribute("user_id");
+ %>
+</head>
+<jsp:include page="/link.html" flush="false"/>
 <body>
-	<jsp:include page="/link.html" flush="false" />
-	<br>
-	<div>${error }</div>
 	<c:if test="${!empty list }">
-		<table>
-			<tr>
-				<th>할 일</th>
-				<th>목표 날짜</th>
-				<th>생성 날짜</th>
-				<th>해결 여부</th>
-				<th>카테고리</th>
-				<th>삭제하기</th>
-				<th>수정하기</th>
-			</tr>
-			<c:forEach var="list" items="${list}">
-				<tr>
-					<td>${list.content}</td>
-					<td>${list.targetDate}</td>
-					<td>${list.createDate}</td>
-					<td>${list.done}</td>
-					<td>${list.ctgName}</td>
-					<td>삭제하기</td>
-					<td>수정하기</td>
-				</tr>
-			</c:forEach>
-		</table>
-		<div></div>
+	<table>
+		<tr>
+			<th>할 일</th>
+			<th>목표 날짜</th>
+			<th>생성 날짜</th>
+			<th>해결 여부</th>
+			<th>카테고리</th>
+			<th colspan="2">삭제하기</th>
+			<th colspan="2">수정하기</th>
+		</tr>
+		<c:forEach var="todoList" items="${list}" >
+     	<tr>
+     		<th>${todoList.content }</th>
+     		<td>${todoList.targetDate }</td>
+     		<td>${todoList.createDate }</td>
+     		<td>${todoList.done }</td>
+     		<td>${todoList.ctgName }</td>
+     		<td colspan="2"><a href="/deleteServlet2?idx=${t.idx }&page=${page}" onclick="return check()">삭제하기</a></td>
+ 			<td colspan="2"><a href="/updateServlet?idx=${t.idx }">수정하기</a></td>
+     	</tr>
+  		</c:forEach>
+	</table>
+	<div>
+		<% 
+		int a=Integer.parseInt(request.getParameter("page"));
+		int pagestart=1+((a-1)/10)*10;
+		if(pagestart!=1){%>
+		<a href="/listTodoServlet?page=<%=pagestart-1%>">&lt;</a>
+		<%}
+		for(int i=pagestart;i<pagestart+10&&i<=service.maxpage(id);i++){ %>
+		   <a href="/listTodoServlet?page=<%=i%>" class="pageidx"><%=i%></a>
+		<%} 
+		if(pagestart+10<service.maxpage(id)){%>
+		<a href="/listTodoServlet?page=<%=pagestart+10%>">&gt;</a>
+		<%} %>
+	</div>
 	</c:if>
 	<c:if test="${empty list }">
-		<p>일정이 없습니다.</p>
+		<p>일정이 없습니다</p>
 	</c:if>
 </body>
 </html>

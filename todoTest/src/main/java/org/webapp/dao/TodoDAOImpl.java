@@ -60,11 +60,12 @@ public class TodoDAOImpl implements TodoService {
 		
 		getConn();
 		
-		String sql = "select a.idx, a.content, a.target_date, a.create_date, a.done, b.name, a.category\r\n"
-					+ "from todo a inner join todo_category b\r\n" + "on a.category = b.cat_id\r\n"
-					+ "where a.user_id = ?\r\n" + "limit ?,?";
+		
 		
 		try {
+			String sql = "select a.idx, a.content, a.target_date, a.create_date, a.done, b.name, a.category\r\n"
+					+ "from todo01 a inner join todo01_category b\r\n" + "on a.category = b.cat_id\r\n"
+					+ "where a.user_id = ?\r\n" + "limit ?,?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, id);
 			ps.setInt(2, (page - 1) * TodoService.page);
@@ -97,46 +98,12 @@ public class TodoDAOImpl implements TodoService {
 	}
 
 	@Override
-	public List<Todo> todoList(int cate, int page, String id) {
-		List<Todo>list = new ArrayList<>();
-		getConn();
-		
-		String sql = "select a.idx, a.content, a.target_date, a.create_date, a.done, b.name, a.category \r\n"
-				+ "from todo a inner join todo_category b\r\n" + "	on a.category = b.cat_id\r\n"
-				+ "and a.category = " + cate + "\r\n" + "and a.user_id =" + "\'" + id + "\'" + "\n" + "limit ?,?";
-		try {
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, (page - 1) * TodoService.page);
-			ps.setInt(2, TodoService.page);
-			
-			rs = ps.executeQuery();
-			
-			while(rs.next()){
-				Todo todo = new Todo();
-				todo.setIdx(rs.getInt(1));
-				todo.setContent(rs.getString(2));
-				todo.setTargetDate(rs.getDate(3));
-				todo.setCreateDate(rs.getDate(4));
-				todo.setDone(rs.getBoolean(5));
-				todo.setCtgName(rs.getString(6));
-				todo.setCategory(rs.getInt(7));
-				list.add(todo);
-			}
-			rs.close();
-			ps.close();
-			conn.close();
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return list;
-	}
-
-	@Override
 	public Todo getTodo(int idx) {
-		// TODO Auto-generated method stub
+		Todo todo = new Todo();
+		
+		getConn();
+		String sql = "select content, target_date, done, category,idx from todo01 where idx = " + idx;
+		
 		return null;
 	}
 
@@ -154,14 +121,27 @@ public class TodoDAOImpl implements TodoService {
 
 	@Override
 	public int maxpage(String id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int maxpage(String id, int category) {
-		// TODO Auto-generated method stub
-		return 0;
+		int count = 0;
+		try {
+			getConn();
+			ps = conn.prepareStatement("SELECT count(*) FROM todo01 where user_id=?");
+			ps.setString(1, id);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+			rs.close();
+			ps.close();
+			conn.close();
+		} catch (Exception e) {
+			// TODO ??? ?????? catch ???
+			e.printStackTrace();
+		} 
+		int maxpage = count / TodoService.page;
+		if (count % TodoService.page != 0) {// 나머지가 있으면
+			maxpage++;
+		}
+		return maxpage;
 	}
 
 	@Override
