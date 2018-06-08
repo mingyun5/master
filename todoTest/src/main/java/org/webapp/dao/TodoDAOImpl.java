@@ -102,21 +102,101 @@ public class TodoDAOImpl implements TodoService {
 		Todo todo = new Todo();
 		
 		getConn();
-		String sql = "select content, target_date, done, category,idx from todo01 where idx = " + idx;
+		try {
+			String sql = "select content, target_date, done, category,idx from todo01 where idx = " + idx;
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				todo.setContent(rs.getString(1));
+				todo.setTargetDate(rs.getDate(2));
+				todo.setDone(rs.getBoolean(3));
+				todo.setCategory(rs.getInt(4));
+				todo.setIdx(rs.getInt(5));
+			}
+			
+			rs.close();
+			ps.close();
+			conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return todo;
+	}
+	
+	@Override
+	public boolean todoupdate(Todo todo) {
+		int status = 0;
+		
+		getConn();
+		
+		try {
+			String sql = "update todo01 set content= ?, target_date=?, done=?, category=? where idx =?";
+			ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, todo.getContent());
+			ps.setDate(2, todo.getTargetDate());
+			ps.setBoolean(3, todo.isDone());
+			ps.setInt(4, todo.getCategory());
+			ps.setInt(5, todo.getIdx());
+			
+			status = ps.executeUpdate();
+			
+			ps.close();
+			conn.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return status != 0 ? true : false;
+	}
+	
+	@Override
+	public String ctgName(int category) {
+		getConn();
+		
+		try {
+			String sql = "select name from todo01_category where cat_id = " + category;
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				return rs.getString(1);
+			}
+			
+			rs.close();
+			ps.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return null;
 	}
-
+	
 	@Override
 	public boolean tododelete(int idx) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public String getCtgName(int category) {
-		// TODO Auto-generated method stub
-		return null;
+		int status = 0;
+		getConn();
+		
+		try {
+			String sql = "delete from todo01 where idx=" +idx;
+			ps = conn.prepareStatement(sql);
+			
+			status = ps.executeUpdate();
+			
+			ps.close();
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return status != 0 ? true : false;
 	}
 
 	@Override
@@ -142,12 +222,6 @@ public class TodoDAOImpl implements TodoService {
 			maxpage++;
 		}
 		return maxpage;
-	}
-
-	@Override
-	public List<Todo> getCategory() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

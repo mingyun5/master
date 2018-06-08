@@ -78,4 +78,14 @@
     <servlet-name>ListTodoPageServlet</servlet-name>
     <url-pattern>/ListTodoPageServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteTodoServlet</display-name>
+    <servlet-name>DeleteTodoServlet</servlet-name>
+    <servlet-class>org.webapp.servlet.DeleteTodoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteTodoServlet</servlet-name>
+    <url-pattern>/DeleteTodoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

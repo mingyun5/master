@@ -9,13 +9,13 @@ public interface TodoService {
 	
 	public List<Todo> listAll(int page, String id);
 	
-	public Todo getTodo(int idx);
-	
 	public boolean tododelete(int idx);
 	
-	public String getCtgName(int category);
+	public Todo getTodo(int idx);
+	
+	public boolean todoupdate(Todo todo);
 	
 	public int maxpage(String id);
 	
-	public List<Todo> getCategory();
+	public String ctgName(int category);
 }

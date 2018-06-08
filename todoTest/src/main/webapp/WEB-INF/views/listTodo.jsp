@@ -33,8 +33,8 @@
      		<td>${todoList.createDate }</td>
      		<td>${todoList.done }</td>
      		<td>${todoList.ctgName }</td>
-     		<td colspan="2"><a href="/deleteServlet2?idx=${t.idx }&page=${page}" onclick="return check()">삭제하기</a></td>
- 			<td colspan="2"><a href="/updateServlet?idx=${t.idx }">수정하기</a></td>
+     		<td colspan="2"><a href="/DeleteTodoServlet?idx=${todoList.idx }&page=${page}">삭제하기</a></td>
+ 			<td colspan="2"><a href="/UpdateTodoServlet?idx=${todoList.idx }">수정하기</a></td>
      	</tr>
   		</c:forEach>
 	</table>
