@@ -8,6 +8,8 @@
 </head>
 <body>
 <jsp:include page="link.html" flush="false"/>
+	<br>
+	${error }
 	<form action="/joinServlet" method="post">
 		<table>
 			<thead>

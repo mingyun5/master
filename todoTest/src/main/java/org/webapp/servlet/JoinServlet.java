@@ -30,6 +30,9 @@ public class JoinServlet extends HttpServlet {
 			session.setAttribute("user_id", user.getId());
 			request.setAttribute("name", user.getName());
 			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+		}else {
+			request.setAttribute("error", "회원가입에 실패하셨습니다 /아이디가 중복 됩니다.");
+			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 		
 	}
