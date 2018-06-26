@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="org.study.board.mapper.todoMapper">
+ 	<insert id="todocreate">
+ 		insert into todo (title, content, target_date)
+ 		values (#{title}, #{content}, #{targetDate})
+ 	</insert>
+ 	<select id="todoListAll" resultType="org.study.board.model.TodoVO">
+ 		<![CDATA[
+			select * from todo
+			where bno > 0 
+			order by bno desc, create_date desc
+		]]>
+ 	</select>
+ </mapper>

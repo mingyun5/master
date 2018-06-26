@@ -11,9 +11,9 @@ public class UserServiceTest {
 	public void joinTest(){
 		User user = new User();
 		
-		user.setId("admin11");
-		user.setName("admin11");
-		user.setPassword("admin11");
+		user.setId("admin12");
+		user.setName("admin12");
+		user.setPassword("admin12");
 		
 		UserService service = new UserService();
 		
