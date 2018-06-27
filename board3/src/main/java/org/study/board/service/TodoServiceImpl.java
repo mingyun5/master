@@ -2,40 +2,50 @@ package org.study.board.service;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+import org.study.board.model.BoardVO;
+import org.study.board.model.Criteria;
 import org.study.board.model.TodoVO;
+import org.study.board.persistence.TodoDAO;
 
-@Repository
+@Service
 public class TodoServiceImpl implements TodoService {
-	
-	private static final String name = "org.study.board.mapper.todoMapper";
 	@Autowired
-	SqlSession session;
+	private TodoDAO dao;
 	
 	
 	@Override
 	public void regist(TodoVO vo) throws Exception {
-		session.insert(name + ".todocreate" ,vo);
-
+		dao.regist(vo);
 	}
 
 	@Override
-	public boolean tododelete(int bno) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+	public void tododelete(int bno) throws Exception {
+		dao.tododelete(bno);
 	}
 
 	@Override
-	public boolean todoupdate(TodoVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
+	public void todoupdate(TodoVO vo) throws Exception {
+		dao.todoupdate(vo);
 	}
 
 	@Override
 	public List<TodoVO> listAll() throws Exception {
-		return session.selectList(name+".todoListAll");
+		return dao.listAll();
 	}
 
+	@Override
+	public TodoVO todoread(int bno) throws Exception {
+		return dao.todoread(bno);
+	}
+	@Override
+	public List<TodoVO> listCriteria(Criteria cri) throws Exception {
+		return dao.listCriteria(cri);
+	}
+	
+	@Override
+	public int countTodoPage() throws Exception {
+		return dao.getTotalTodoNum();
+	}
 }

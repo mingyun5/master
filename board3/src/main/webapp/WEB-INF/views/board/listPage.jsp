@@ -19,7 +19,7 @@
 		<th>TITLE</th>
 		<th>WRITER</th>
 		<th>REGDATE</th>
-		<th sytle="width: 40px">VIEWCNT</th>
+		<th style="width: 40px">VIEWCNT</th>
 	</tr>
 	<c:forEach items="${list }" var="boardVO" >
 		<tr>

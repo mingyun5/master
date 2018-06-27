@@ -16,7 +16,7 @@
 		</div>
 		<div class="form-group">
 			<label>Date</label>
-			<input type="date" name="targetDate" class="form-control"/>
+			<input type="date" name="target_date" class="form-control"/>
 		</div>
 	</div>
 	<div class="box-footer">

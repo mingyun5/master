@@ -3,14 +3,14 @@ package org.study.board.model;
 import java.sql.Date;
 
 public class TodoVO{
-	private int bno;
+	private Integer bno;
 	private String title;
 	private String content;
-	private Date targetDate;
-	private Date createDate;
+	private Date target_date;
+	private Date create_date;
 	private boolean done;
 
-	public int getBno() {
+	public Integer getBno() {
 		return bno;
 	}
 
@@ -34,20 +34,20 @@ public class TodoVO{
 		this.content = content;
 	}
 
-	public Date getTargetDate() {
-		return targetDate;
+	public Date getTarget_date() {
+		return target_date;
 	}
 
-	public void setTargetDate(Date targetDate) {
-		this.targetDate = targetDate;
+	public void setTarget_date(Date target_date) {
+		this.target_date = target_date;
 	}
 
-	public Date getCreateDate() {
-		return createDate;
+	public Date getCreate_date() {
+		return create_date;
 	}
 
-	public void setCreateDate(Date createDate) {
-		this.createDate = createDate;
+	public void setCreate_date(Date create_date) {
+		this.create_date = create_date;
 	}
 
 	public boolean isDone() {
@@ -60,8 +60,8 @@ public class TodoVO{
 
 	@Override
 	public String toString() {
-		return "TodoVO [bno=" + bno + ", title=" + title + ", content=" + content + ", targetDate=" + targetDate
-				+ ", createDate=" + createDate + ", done=" + done + "]";
+		return "TodoVO [bno=" + bno + ", title=" + title + ", content=" + content + ", targetDate=" + target_date
+				+ ", createDate=" + create_date + ", done=" + done + "]";
 	}
 	
 	

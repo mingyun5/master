@@ -6,8 +6,9 @@
  <mapper namespace="org.study.board.mapper.todoMapper">
  	<insert id="todocreate">
  		insert into todo (title, content, target_date)
- 		values (#{title}, #{content}, #{targetDate})
+ 		values (#{title}, #{content}, #{target_date})
  	</insert>
+ 	
  	<select id="todoListAll" resultType="org.study.board.model.TodoVO">
  		<![CDATA[
 			select * from todo
@@ -15,4 +16,39 @@
 			order by bno desc, create_date desc
 		]]>
  	</select>
+ 	<select id="todoread" resultType="org.study.board.model.TodoVO">
+ 		select * from todo
+ 		where bno = #{bno}
+ 	</select>
+ 	<delete id="tododelete">
+ 		delete from todo
+ 		where bno = #{bno}
+ 	</delete>
+ 	<update id="todoupdate">
+ 		update todo set title=#{title}, content=#{content}, target_date=#{target_date}, done=${done}
+ 		where bno = #{bno}
+ 	</update>
+ 	<select id="listPage" resultType="org.study.board.model.TodoVO">
+		<![CDATA[
+			select * from todo
+			where bno > 0
+			order by bno desc, create_date desc
+			limit #{page}, 10
+		]]>
+	</select>
+ 	<select id="listCriteria" resultType="org.study.board.model.TodoVO">
+		<![CDATA[
+			select * from todo
+			where bno > 0
+			order by bno desc, create_date desc
+			limit #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		<![CDATA[
+			select count(bno) from todo
+			where bno > 0
+		]]>
+	</select>
  </mapper>
