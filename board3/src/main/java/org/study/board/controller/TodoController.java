@@ -1,10 +1,14 @@
 package org.study.board.controller;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,8 +33,11 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value="register", method=RequestMethod.POST)
-	public String registerPost(TodoVO vo) {
+	public String registerPost(@Valid @ModelAttribute("TodoVO") TodoVO vo, BindingResult result) {
 		
+		if(result.hasErrors()) {
+			return "/todo/register";
+		}
 		try {
 			service.regist(vo);
 		} catch (Exception e) {
@@ -67,8 +74,13 @@ public class TodoController {
 	}
 	
 	@RequestMapping(value="modify", method=RequestMethod.POST)
-	public String modifyPost(TodoVO vo, Criteria cri) throws Exception{
+	public String modifyPost(@Valid @ModelAttribute("TodoVO") TodoVO vo, BindingResult result, Criteria cri , Model model) throws Exception{
 		service.todoupdate(vo);
+		if(result.hasErrors()) {
+			model.addAttribute(vo);
+			model.addAttribute("cri",cri);
+			return "/todo/modify";
+		}
 		return "redirect:/todo/listPage?page=" + cri.getPage() + "&perPageNum=" + cri.getPerPageNum();
 	}
 	

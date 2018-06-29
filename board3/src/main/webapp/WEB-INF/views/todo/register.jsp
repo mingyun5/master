@@ -2,6 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../common/header.jspf"%>
 <%@ include file="../common/navigation.jspf"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+
+<form:errors path="TodoVO.*" cssClass="error" >
+</form:errors>
 <form action="/todo/register" method="post">
 	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	

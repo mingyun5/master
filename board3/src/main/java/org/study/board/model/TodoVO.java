@@ -2,8 +2,12 @@ package org.study.board.model;
 
 import java.sql.Date;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class TodoVO{
 	private Integer bno;
+	
+	@NotEmpty(message= "제목 입력")
 	private String title;
 	private String content;
 	private Date target_date;
