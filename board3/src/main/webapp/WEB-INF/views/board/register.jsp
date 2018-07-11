@@ -6,6 +6,7 @@
 <h1>게시물 등록</h1>
 
 <form action="/board/register" method="post">
+	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 	<div class="box-body">
 		<div class="form-group">
 			<label>Title</label> <input type="text" name='title'
