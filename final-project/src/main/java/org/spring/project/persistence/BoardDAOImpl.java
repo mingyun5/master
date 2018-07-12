@@ -11,7 +11,7 @@ import org.spring.project.model.Criteria;
 @Repository
 public class BoardDAOImpl implements BoardDAO {
 	
-	private static final String name = "org.study.board.mapper.BoardMapper";
+	private static final String name = "org.spring.project.mapper.BoardMapper";
 	@Autowired
 	SqlSession session;
 	

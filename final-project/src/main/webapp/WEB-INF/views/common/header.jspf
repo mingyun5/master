@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Home</title>
+		<title>mingyun</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="format-detection" content="telephone=no">
@@ -27,7 +27,7 @@
 			<!-- header -->
 			<header class="header header--fixed">
 				<div class="header__inner">
-					<div class="header__logo"><a href="index.html"><img src="assets/img/logo.png" alt="" style="width: 122px;"/></a></div>
+					<div class="header__logo"><a href="/"><img src="/resources/webjars/assets/img/logo.png" alt="" style="width: 122px;"/></a></div>
 					<div class="navbar-toggle" id="fs-button">
 						<div class="navbar-icon"><span></span></div>
 					</div>
@@ -41,15 +41,11 @@
 						
 						<!--  -->
 						<ul class="wil-menu-list">
-							<li class="current-menu-item"><a href="index.html">Home</a>
+							<li class="current-menu-item"><a href="/">Home</a>
 							</li>
-							<li><a href="about.html">About</a>
+							<li><a href="/todo/listPage">todo</a>
 							</li>
-							<li><a href="work.html">Work</a>
-							</li>
-							<li><a href="blog.html">Blog</a>
-							</li>
-							<li><a href="contact.html">Contact</a>
+							<li><a href="/board/listPage">board</a>
 							</li>
 						</ul><!--  -->
 						

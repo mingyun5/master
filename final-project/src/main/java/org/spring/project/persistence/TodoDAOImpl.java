@@ -12,7 +12,7 @@ import org.spring.project.model.TodoVO;
 @Repository
 public class TodoDAOImpl implements TodoDAO {
 	
-	private static final String name = "org.study.board.mapper.todoMapper";
+	private static final String name = "org.spring.project.mapper.todoMapper";
 	@Autowired
 	SqlSession session;
 	
