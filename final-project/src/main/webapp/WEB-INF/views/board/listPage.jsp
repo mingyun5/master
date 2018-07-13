@@ -50,8 +50,9 @@ th, td{ text-align: left; padding: 10px 0;border-top: 1px solid #eee}
 							<td><a
 								href='/board/read?bno=${boardVO.bno}&page=${pageMaker.cri.page}&perPageNum=${pageMaker.cri.perPageNum}'>${boardVO.title }</a></td>
 							<td>${boardVO.writer }</td>
-							<td><fmt:formatDate pattern="yy-MM-dd HH:mm"
-									value="${boardVO.regdate }" /></td>
+							<%-- <td><fmt:formatDate pattern="yy-MM-dd HH:mm"
+									value="${boardVO.regdate }" /></td> --%>
+							<td>${boardVO.regdate }</td>
 							<td>${boardVO.viewcnt }</td>
 						</tr>
 					</c:forEach>

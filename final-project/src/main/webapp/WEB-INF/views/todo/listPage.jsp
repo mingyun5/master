@@ -15,8 +15,7 @@ th, td{ text-align: left; padding: 10px 0;border-top: 1px solid #eee}
 			<!-- page-title -->
 			<div class="page-title pb-40">
 				<h2 class="page-title__title">Todo List</h2>
-				<p class="page-title__text">Sed ante nisl, fermentum et
-					facilisis in</p>
+				<p class="page-title__text">It is my work board.</p>
 				<div class="page-title__divider"></div>
 			</div>
 			<!-- End / page-title -->
@@ -49,8 +48,9 @@ th, td{ text-align: left; padding: 10px 0;border-top: 1px solid #eee}
 							<td><a
 								href='/todo/read?bno=${todoVO.bno}&page=${pageMaker.cri.page}&perPageNum=${pageMaker.cri.perPageNum}'>${todoVO.title }</a>
 							</td>
-							<td><fmt:formatDate pattern="yy-MM-dd HH:mm"
-									value="${todoVO.create_date }" /></td>
+							<%-- <td><fmt:formatDate pattern="yy-MM-dd HH:mm"
+									value="${todoVO.create_date }" /></td> --%>
+							<td>${todoVO.create_date }</td>
 							<td>${todoVO.target_date}</td>
 							<td>${todoVO.done }</td>
 						</tr>

@@ -11,7 +11,7 @@
 
 			<!-- page-title -->
 			<div class="page-title pb-40">
-				<h2 class="page-title__title">Todo List</h2>
+				<h2 class="page-title__title">register todo</h2>
 				<p class="page-title__text">Sed ante nisl, fermentum et
 					facilisis in</p>
 				<div class="page-title__divider"></div>
