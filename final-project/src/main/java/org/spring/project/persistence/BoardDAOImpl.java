@@ -60,5 +60,10 @@ public class BoardDAOImpl implements BoardDAO {
 	public int getTotalBoardNum() throws Exception {
 		return session.selectOne(name + ".getTotal");
 	}
+	
+	@Override
+	public void count(Integer bno) throws Exception{
+		session.update(name + ".count", bno);
+	}
 
 }

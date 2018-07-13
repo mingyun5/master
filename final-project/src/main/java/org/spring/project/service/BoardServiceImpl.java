@@ -47,5 +47,9 @@ public class BoardServiceImpl implements BoardService {
 	public int countBoardPage() throws Exception {
 		return dao.getTotalBoardNum();
 	}
-
+	
+	@Override
+	public void count(int bno) throws Exception{
+		dao.count(bno);
+	}
 }

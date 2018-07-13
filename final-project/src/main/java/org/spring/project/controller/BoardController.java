@@ -42,14 +42,14 @@ public class BoardController {
 		}
 		
 		rttr.addFlashAttribute("result", "success");
-		return "redirect:/board/listAll";
+		return "redirect:/board/listPage";
 	}
 	
 	@RequestMapping(value="listAll", method=RequestMethod.GET)
 	public String listAll(Model model) throws Exception {
 		logger.info("show all list");
 		model.addAttribute("list",service.listAll());
-		return "/board/list";
+		return "/board/listPage";
 	}
 	
 	@RequestMapping(value="listAll", method=RequestMethod.POST)
@@ -61,6 +61,7 @@ public class BoardController {
 	@RequestMapping(value="read", method=RequestMethod.GET)
 	public String read(@RequestParam("bno") int bno, Criteria cri, Model model) throws Exception {
 		logger.info("read.. : " + cri);
+		service.count(bno);
 		model.addAttribute(service.read(bno));
 		model.addAttribute("cri", cri);
 		return "/board/read";
