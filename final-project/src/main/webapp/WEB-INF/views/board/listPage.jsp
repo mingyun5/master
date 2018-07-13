@@ -2,6 +2,10 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../common/header.jspf"%>
+<style>
+.table{width: 100%}
+th, td{ text-align: left; padding: 10px 0;border-top: 1px solid #eee}
+</style>
 <!-- Content-->
 <div class="wil-content">
 	<!-- Section -->

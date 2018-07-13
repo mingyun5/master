@@ -17,8 +17,8 @@
 					<!-- typing__module -->
 					<div class="typing__module">
 						<div class="typed-strings">
-							<span>'m a web designer</span><span> do creative</span><span>'m
-								a frontend developer</span>
+							<span>'m a programmer</span><span> do creative</span><span>'m
+								a backend developer</span>
 						</div>
 						<span class="typed"></span>
 					</div>
@@ -46,28 +46,23 @@
 					class="col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-0 col-lg-offset-1 ">
 
 					<!--  -->
-					<div class="mt-30">
-						<h2 class="about__title">Erik Minimis</h2>
-						<p class="about__subtitle">Just Keep Scrolling! How To Design
-							Lengthy, Lengthy Pages</p>
-						<p class="about__text">Maecenas lorem ex, euismod eget
-							pulvinar non, facilisis ut leo. Quisque placerat purus in neque
-							efficitur ornare. Nam at justo magna. Aliquam venenatis odio
-							ante, non euismod augue porttitor eget. Maecenas nec viverra
-							eros, eget euismod felis. Integer cursus libero sed lorem
-							euismod, vel iaculis felis placerat. Pellentesque augue lacus,
-							sodales et eros sed, molestie rhoncus ligula. Vivamus sed massa
-							lorem. Suspendisse mollis lectus nec ex fermentum, in consectetur
-							dolor egestas. Phasellus quis ipsum quis nisl ultricies
-							sollicitudin id in dolor. Proin at consequat dui.</p>
+					<div class="mt-30" style="margin-top: 0;">
+						<h2 class="about__title">mingyun bong</h2>
+						<p class="about__subtitle">목표를 향한 설레는 첫 걸음!</p>
+						<p class="about__text">2년동안 퍼블리셔로서 개발자들과 프로그램 협업업무를 하면서, 개발
+							영역이 제가 더 재미있게 잘 할 수 있는 분야라는 생각이 들었습니다. 그리고 개발자가 되기 위하여 과감히 퇴사를
+							하고, NCS 기반의 자바&웹SW개발자 과정을 1일 8시간 총 1,000시간 6개월의 교육을 통하여 전문지식과 기술을
+							습득하기 위하여 노력하여 왔습니다. 학습을 할수록 개발자가 더 적성에 맞구나 라는 확인이 들었고 재미있게 프로젝트
+							결과물을 만들고 있습니다. 앞으로 귀사에서 그동안 배운 지식과 기술을 펼칠 수 있기를 바라면서 개발자로서 역할을 하고
+							싶고 더불어 함께 성장하고 싶어서 지원하게 되었습니다.</p>
 
 						<!-- progress -->
 						<div class="progress">
-							<h5 class="progress__title">design</h5>
+							<h5 class="progress__title">html / css</h5>
 							<div class="progress__wrap">
-								<div class="progress__bar" data-progress-percent="33"
+								<div class="progress__bar" data-progress-percent="80"
 									data-timing="ease" data-duration="1000" data-delay="500"></div>
-								<span class="progress__number">39%</span>
+								<span class="progress__number">88%</span>
 							</div>
 						</div>
 						<!-- End / progress -->
@@ -75,11 +70,11 @@
 
 						<!-- progress -->
 						<div class="progress">
-							<h5 class="progress__title">photography</h5>
+							<h5 class="progress__title">JQUERY / JAVASCRIPT</h5>
 							<div class="progress__wrap">
-								<div class="progress__bar" data-progress-percent="59"
+								<div class="progress__bar" data-progress-percent="60"
 									data-timing="ease" data-duration="1000" data-delay="500"></div>
-								<span class="progress__number">47%</span>
+								<span class="progress__number">60%</span>
 							</div>
 						</div>
 						<!-- End / progress -->
@@ -87,15 +82,47 @@
 
 						<!-- progress -->
 						<div class="progress">
-							<h5 class="progress__title">web development</h5>
+							<h5 class="progress__title">java</h5>
 							<div class="progress__wrap">
-								<div class="progress__bar" data-progress-percent="53"
+								<div class="progress__bar" data-progress-percent="50"
 									data-timing="ease" data-duration="1000" data-delay="500"></div>
-								<span class="progress__number">59%</span>
+								<span class="progress__number">50%</span>
+							</div>
+						</div>
+						<!-- End / progress -->
+						
+						<!-- progress -->
+						<div class="progress">
+							<h5 class="progress__title">SPRING FRAMEWORK</h5>
+							<div class="progress__wrap">
+								<div class="progress__bar" data-progress-percent="40"
+									data-timing="ease" data-duration="1000" data-delay="500"></div>
+								<span class="progress__number">40%</span>
+							</div>
+						</div>
+						<!-- End / progress -->
+						
+						<!-- progress -->
+						<div class="progress">
+							<h5 class="progress__title">jsp</h5>
+							<div class="progress__wrap">
+								<div class="progress__bar" data-progress-percent="60"
+									data-timing="ease" data-duration="1000" data-delay="500"></div>
+								<span class="progress__number">60%</span>
 							</div>
 						</div>
 						<!-- End / progress -->
 
+						<!-- progress -->
+						<div class="progress">
+							<h5 class="progress__title">DATABASE</h5>
+							<div class="progress__wrap">
+								<div class="progress__bar" data-progress-percent="50"
+									data-timing="ease" data-duration="1000" data-delay="500"></div>
+								<span class="progress__number">50%</span>
+							</div>
+						</div>
+						<!-- End / progress -->
 					</div>
 					<!-- End /  -->
 
